@@ -14,17 +14,60 @@
     <input type="password" id="adminPass" placeholder="Enter password">
     <button onclick="verifyAccess()">Enter</button>
   </div>-->
-  <div id="cartSection">
-    <h1>MedSwift</h1>
-    <p>Select Medication, view cart, and checkout.</p>
-    <button onclick="addMedication()">Add Medication</button>
-    <div id="cartItems"></div>
-    <p>Total: ₦<span id="total">0</span></p>
-    <button onclick="checkoutWhatsApp()">Checkout via WhatsApp</button>
-    <button onclick="checkoutEmail()">Checkout via Email</button>
-    <button onclick="window.print()">🖨️ Print/Save PDF</button>
-    <p><small>Save this page or screenshot as proof of purchase and send to MedSwift via WhatsApp.</small></p>
-  </div>
+  
+<h1>MedSwift</h1><br><h2></h2> Pharmacy Pro.</h2>
+
+<div class="cart-icon" onclick="scrollToCart()" data-count="0">🛒</div>
+
+<div class="form-section">
+  <h3>Select Medication</h3>
+  <div id="pillList"></div>
+  <button onclick="addNewPillEntry()" class="add-btn">Add More Pills</button>
+</div>
+
+<div class="checkout-section" id="cartSection">
+  <h3>Your Cart</h3>
+  <div id="cartItems"></div>
+  <div class="total">Total: <span id="totalAmount">&#8358;0</span></div>
+
+  <label>Select Your Area</label>
+  <select id="locationSelect" onchange="updateDeliveryCost()">
+    <option disabled selected>-- Choose Area --</option>
+    <optgroup label="Ijebu-Ode">
+      <option value="Ijebu-Ode:200">Ijebu-Ode Town</option>
+      <option value="Imoru:300">Imoru</option>
+      <option value="Odo-Egbo:250">Odo-Egbo</option>
+      <option value="Erinlu:300">Erinlu</option>
+    </optgroup>
+    <optgroup label="Ijebu-Igbo">
+      <option value="Ojowo:350">Ojowo</option>
+      <option value="Atikori:400">Atikori</option>
+      <option value="Oke-Agbo:400">Oke-Agbo</option>
+      <option value="Japara:350">Japara</option>
+    </optgroup>
+    <optgroup label="Ago-Iwoye">
+      <option value="Ago-Central:300">Ago-Central</option>
+      <option value="Itamerin:350">Itamerin</option>
+      <option value="Ilaporu:300">Ilaporu</option>
+      <option value="Molipa:400">Molipa</option>
+    </optgroup>
+  </select>
+
+  <div class="location-cost">Delivery Cost: <span id="deliveryCost">&#8358;0</span></div>
+
+  <div class="total">Grand Total: <span id="grandTotal">&#8358;0</span></div>
+
+  <button onclick="checkoutWhatsApp()" class="checkout-btn">Checkout via WhatsApp</button>
+  <button onclick="checkoutEmail()" class="checkout-btn">Checkout via Email</button>
+</div>
+<p style="margin-top: 15px; font-style: italic; color: #444;">
+  📌 <strong>Tip:</strong> Please <strong>save or screenshot</strong> your payment summary and <strong>send it to us via WhatsApp</strong> for faster processing.
+</p>
+
+<button onclick="printOrderSummary()" style="margin-top: 10px; background-color: #4CAF50; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px;">
+  🖨️ Print or Save PDF
+</button>
+
   <script src="script.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
