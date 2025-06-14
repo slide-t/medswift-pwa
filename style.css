@@ -1,4 +1,119 @@
-body { font-family: Arial, sans-serif; padding: 20px; background: #f0f0f0; }
-h1 { color: #004d40; }
-button { padding: 10px 15px; margin: 5px; background: #00796B; color: white; border: none; border-radius: 5px; }
-#cartItems { margin-top: 10px; background: white; padding: 10px; border-radius: 5px; }
+
+    *{
+      box-sizing: border-box;
+      margin:0;
+      padding:0;
+      
+      }
+  
+    body {
+      font-family: 'Arial', sans-serif;
+      padding: 1rem;
+      background: #f0f0f0;
+      margin: 0;
+    }
+
+ 
+  h1 {
+      text-align: left;
+      color: #0077aa;
+      margin-left:10px;
+      margin-bottom: 0;
+      font-family:'Brush Script MT', cursive;
+    }
+    h2 {
+      margin-top:0;
+      font-size:32px;
+      font-family: 'Roboto Slab';
+      }
+    h3 {
+      font-size:24px;
+      }
+
+    .form-section, .checkout-section {
+      margin: 1rem 0;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    label, select, button {
+      display: block;
+      margin-top: 0.5rem;
+      width: 100%;
+    }
+
+    select, button {
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .pill-entry {
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 1rem;
+    }
+  
+  .cart-icon {
+      position: fixed;
+      top: 60px;
+      right: 60px;
+      background: #ffddcc;
+      color: white;
+      padding: 12px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 999;
+      font-size: 2rem
+    }
+
+    .cart-icon::after {
+      content: attr(data-count);
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: orange;
+      color: #fff;
+      font-size: 1rem;
+      padding: 2px 8px;
+      border-radius: 50%;
+    }
+
+   .cart-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+
+    .remove-btn {
+      cursor: pointer;
+      color: red;
+    }
+
+    .total {
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+
+    .location-cost {
+      background: #eee;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    button.add-btn {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      margin-top: 0.5rem;
+    }
+
+    button.checkout-btn {
+      background-color: #0077aa;
+      color: white;
+      border: none;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+    }
