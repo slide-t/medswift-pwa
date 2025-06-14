@@ -1,4 +1,4 @@
- <script>
+ <script src="app.js">
     const printWindow = window.open('', '', 'height=600,width=800');
     printWindow.document.write(printableContent);
     printWindow.document.close();
