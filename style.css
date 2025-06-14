@@ -1,0 +1,4 @@
+body { font-family: Arial, sans-serif; padding: 20px; background: #f0f0f0; }
+h1 { color: #004d40; }
+button { padding: 10px 15px; margin: 5px; background: #00796B; color: white; border: none; border-radius: 5px; }
+#cartItems { margin-top: 10px; background: white; padding: 10px; border-radius: 5px; }

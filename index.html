@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#004d40"/>
+  <link rel="manifest" href="manifest.json">
+  <title>MedSwift Pharma Cart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="loginPanel" style="display:none;">
+    <h3>Admin Login</h3>
+    <input type="password" id="adminPass" placeholder="Enter password">
+    <button onclick="verifyAccess()">Enter</button>
+  </div>
+  <div id="cartSection">
+    <h1>MedSwift</h1>
+    <p>Select Medication, view cart, and checkout.</p>
+    <button onclick="addMedication()">Add Medication</button>
+    <div id="cartItems"></div>
+    <p>Total: ₦<span id="total">0</span></p>
+    <button onclick="checkoutWhatsApp()">Checkout via WhatsApp</button>
+    <button onclick="checkoutEmail()">Checkout via Email</button>
+    <button onclick="window.print()">🖨️ Print/Save PDF</button>
+    <p><small>Save this page or screenshot as proof of purchase and send to MedSwift via WhatsApp.</small></p>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js');
+      });
+    }
+  </script>
+</body>
+</html>
