@@ -28,7 +28,7 @@ function checkoutEmail() {
   const text = cart.map(item => item.name + " - ₦" + item.price).join("\n");
   const total = cart.reduce((sum, item) => sum + item.price, 0);
   window.location.href = `mailto:?subject=MedSwift Order&body=Order:%0A${text}%0ATotal: ₦${total}`;
-}
+}/*
 function verifyAccess() {
   const input = document.getElementById("adminPass").value;
   if (input === "medswift123") {
@@ -37,7 +37,7 @@ function verifyAccess() {
   } else {
     alert("Access Denied!");
   }
-}
+}*/
 window.onload = function() {
   if (localStorage.getItem("access") !== "granted") {
     document.getElementById("loginPanel").style.display = "block";
